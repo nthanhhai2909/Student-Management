@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2017 8:42:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJO.Timetableofsubject" table="timetableofsubject" catalog="quanlysvmh" optimistic-lock="version">
+        <id name="idtimeDate" type="string">
+            <column name="IDTimeDate" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="subject" class="POJO.Subject" fetch="select">
+            <column name="IDSub" length="10" />
+        </many-to-one>
+        <property name="dayStart" type="date">
+            <column name="DayStart" length="10" />
+        </property>
+        <property name="dayEnd" type="date">
+            <column name="DayEnd" length="10" />
+        </property>
+        <property name="numberWeek" type="java.lang.Integer">
+            <column name="NumberWeek" />
+        </property>
+        <property name="weekDays" type="string">
+            <column name="WeekDays" length="10" />
+        </property>
+        <property name="hourStart" type="string">
+            <column name="HourStart" length="10" />
+        </property>
+        <property name="hourEnd" type="string">
+            <column name="HourEnd" length="10" />
+        </property>
+        <property name="nameRoom" type="string">
+            <column name="NameRoom" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

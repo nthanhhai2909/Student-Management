@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2017 8:42:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJO.Subject" table="subject" catalog="quanlysvmh" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="ID" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="account" class="POJO.Account" fetch="select">
+            <column name="Creator" length="50" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="Name" length="50" not-null="true" />
+        </property>
+        <set name="timetableofsubjects" table="timetableofsubject" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDSub" length="10" />
+            </key>
+            <one-to-many class="POJO.Timetableofsubject" />
+        </set>
+        <set name="studentofsubjects" table="studentofsubject" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDSub" length="10" not-null="true" />
+            </key>
+            <one-to-many class="POJO.Studentofsubject" />
+        </set>
+    </class>
+</hibernate-mapping>

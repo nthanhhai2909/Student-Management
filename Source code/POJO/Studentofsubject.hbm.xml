@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2017 8:42:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJO.Studentofsubject" table="studentofsubject" catalog="quanlysvmh" optimistic-lock="version">
+        <composite-id name="id" class="POJO.StudentofsubjectId">
+            <key-property name="idsub" type="string">
+                <column name="IDSub" length="10" />
+            </key-property>
+            <key-property name="userName" type="string">
+                <column name="UserName" length="50" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="account" class="POJO.Account" update="false" insert="false" fetch="select">
+            <column name="UserName" length="50" not-null="true" />
+        </many-to-one>
+        <many-to-one name="subject" class="POJO.Subject" update="false" insert="false" fetch="select">
+            <column name="IDSub" length="10" not-null="true" />
+        </many-to-one>
+        <property name="idtuan1" type="java.lang.Integer">
+            <column name="IDTuan1" />
+        </property>
+        <property name="idtuan2" type="java.lang.Integer">
+            <column name="IDTuan2" />
+        </property>
+        <property name="idtuan3" type="java.lang.Integer">
+            <column name="IDTuan3" />
+        </property>
+        <property name="idtuan4" type="java.lang.Integer">
+            <column name="IDTuan4" />
+        </property>
+        <property name="idtuan5" type="java.lang.Integer">
+            <column name="IDTuan5" />
+        </property>
+        <property name="idtuan6" type="java.lang.Integer">
+            <column name="IDTuan6" />
+        </property>
+        <property name="idtuan7" type="java.lang.Integer">
+            <column name="IDTuan7" />
+        </property>
+        <property name="idtuan8" type="java.lang.Integer">
+            <column name="IDTuan8" />
+        </property>
+        <property name="idtuan9" type="java.lang.Integer">
+            <column name="IDTuan9" />
+        </property>
+        <property name="idtuan10" type="java.lang.Integer">
+            <column name="IDTuan10" />
+        </property>
+        <property name="idtuan11" type="java.lang.Integer">
+            <column name="IDTuan11" />
+        </property>
+        <property name="idtuan12" type="java.lang.Integer">
+            <column name="IDTuan12" />
+        </property>
+        <property name="idtuan13" type="java.lang.Integer">
+            <column name="IDTuan13" />
+        </property>
+        <property name="idtuan14" type="java.lang.Integer">
+            <column name="IDTuan14" />
+        </property>
+        <property name="idtuan15" type="java.lang.Integer">
+            <column name="IDTuan15" />
+        </property>
+    </class>
+</hibernate-mapping>
